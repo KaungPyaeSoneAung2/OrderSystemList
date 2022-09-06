@@ -5,32 +5,150 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <View
+        android:id="@+id/viTopLine"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/lighterGrey"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <View
         android:id="@+id/viSideColor"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@id/viTopLine"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_width="8dp"
-        android:layout_height="wrap_content"
+        android:layout_width="6dp"
+        android:layout_height="0dp"
         android:background="@color/lightBlue"/>
+
     <TextView
         android:id="@+id/tvOrderNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@id/viTopLine"
         app:layout_constraintLeft_toRightOf="@+id/viSideColor"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="5dp"
         android:text="#94580"
-        android:textSize="30sp"
+        android:textColor="@color/black"
+        android:textSize="22sp"
         />
     <TextView
         android:id="@+id/tvOrderTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="1 min ago"
-        android:textSize="18sp"
+        android:text="1 min"
+        android:textSize="15sp"
         android:layout_marginRight="20dp"
-        android:layout_marginTop="15dp"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/tvOrderNumber"
         app:layout_constraintRight_toRightOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvOrdered"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tvOrderNumber"
+        app:layout_constraintLeft_toRightOf="@id/viSideColor"
+        android:layout_marginLeft="15dp"
+        android:text="Ordered"
+        android:textSize="16sp"
+        />
+    <TextView
+        android:id="@+id/tvDotBetween"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tvOrderNumber"
+        app:layout_constraintLeft_toRightOf="@+id/tvOrdered"
+        android:text="•"
+        android:textSize="16sp"
+        android:layout_marginHorizontal="3dp"
+        />
+    <TextView
+        android:id="@+id/tvPaidUnpaid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tvOrderNumber"
+        app:layout_constraintLeft_toRightOf="@+id/tvDotBetween"
+        android:text="Paid"
+        android:textSize="16sp"
+        android:layout_marginHorizontal="3dp"
+        />
+
+    <TextView
+        android:id="@+id/tvPaymentMethod"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/tvPaidUnpaid"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="15dp"
+        android:text="KBZPay"
+        android:textSize="16sp"
+        />
+
+    <TextView
+        android:id="@+id/tvOrderAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tvOrdered"
+        app:layout_constraintLeft_toRightOf="@id/viSideColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:text="15"
+        android:textSize="16sp"
+        />
+    <TextView
+        android:id="@+id/tvItemsby"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/tvOrderAmount"
+        app:layout_constraintLeft_toRightOf="@+id/tvOrderAmount"
+        android:text=" items by "
+        android:textSize="16sp"
+        />
+    <TextView
+        android:id="@+id/tvOrderCustomerNam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/tvOrderAmount"
+        app:layout_constraintLeft_toRightOf="@+id/tvItemsby"
+        android:text="Daw Aye"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        />
+    <TextView
+        android:id="@+id/tvOrderCost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/tvOrderAmount"
+        android:text="54,000 KS"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:layout_marginRight="16dp"
+        />
+    <TextView
+        android:id="@+id/tvOrderPointGain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toLeftOf="@+id/tvOrderCost"
+        app:layout_constraintBottom_toBottomOf="@+id/tvOrderAmount"
+        android:layout_marginRight="10dp"
+        android:text="+70 Points"
+        android:textColor="@color/orange"
+        android:textSize="16sp"
+        android:visibility="invisible"
+        />
+    <TextView
+        android:id="@+id/tvOrderPointAlready"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toLeftOf="@+id/tvOrderCost"
+        app:layout_constraintBottom_toBottomOf="@+id/tvOrderAmount"
+        android:layout_marginRight="10dp"
+        android:text="33 Points"
+        android:textSize="16sp"
+        android:visibility="visible"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
