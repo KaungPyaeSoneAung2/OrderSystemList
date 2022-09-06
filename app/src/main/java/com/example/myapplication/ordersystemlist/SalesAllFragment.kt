@@ -1,26 +1,38 @@
-package com.example.myapplication.ordersystemlist.activity
+package com.example.myapplication.ordersystemlist
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.myapplication.ordersystemlist.R
 import com.example.myapplication.ordersystemlist.adapter.VoucherAdapter
 import com.example.myapplication.ordersystemlist.data.VoucherModel
-import com.example.myapplication.ordersystemlist.databinding.ActivitySalesAllBinding
+import com.example.myapplication.ordersystemlist.databinding.FragmentSalesAllBinding
 
-class SalesAllActivity : AppCompatActivity() {
-    private lateinit var binding: ActivitySalesAllBinding
+
+class SalesAllFragment : Fragment() {
+    private lateinit var binding: FragmentSalesAllBinding
     var voucherList=ArrayList<VoucherModel>()
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding= ActivitySalesAllBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        // Inflate the layout for this fragment
+        binding= FragmentSalesAllBinding.inflate(layoutInflater)
+        return binding.root
+
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         rvAddVoucher()
         adapterSetUp()
     }
 
     private fun adapterSetUp() {
-        binding.rvVouchers.layoutManager=LinearLayoutManager(this)
+        binding.rvVouchers.layoutManager= LinearLayoutManager(activity)
         binding.rvVouchers.setHasFixedSize(true)
         val tempAdapter = VoucherAdapter(voucherList)
         binding.rvVouchers.adapter=tempAdapter

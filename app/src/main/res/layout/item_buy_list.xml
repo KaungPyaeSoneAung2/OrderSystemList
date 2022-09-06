@@ -43,7 +43,7 @@
         app:layout_constraintRight_toRightOf="parent"/>
 
     <TextView
-        android:id="@+id/tvOrdered"
+        android:id="@+id/tvOrderCondition"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/tvOrderNumber"
@@ -57,7 +57,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/tvOrderNumber"
-        app:layout_constraintLeft_toRightOf="@+id/tvOrdered"
+        app:layout_constraintLeft_toRightOf="@+id/tvOrderCondition"
         android:text="•"
         android:textSize="16sp"
         android:layout_marginHorizontal="3dp"
@@ -88,7 +88,7 @@
         android:id="@+id/tvOrderAmount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/tvOrdered"
+        app:layout_constraintTop_toBottomOf="@+id/tvOrderCondition"
         app:layout_constraintLeft_toRightOf="@id/viSideColor"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="5dp"
@@ -148,7 +148,7 @@
         android:layout_marginRight="10dp"
         android:text="33 Points"
         android:textSize="16sp"
-        android:visibility="visible"
+        android:visibility="invisible"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
