@@ -15,10 +15,11 @@
         <entry key="..\:/Users/Admin/AndroidStudioProjects/OrderSystemList/app/src/main/res/layout/activity_sales.xml" value="0.33" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/OrderSystemList/app/src/main/res/layout/activity_sales_all.xml" value="0.29270833333333335" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/OrderSystemList/app/src/main/res/layout/activity_sales_live.xml" value="0.29270833333333335" />
-        <entry key="..\:/Users/Admin/AndroidStudioProjects/OrderSystemList/app/src/main/res/layout/activity_sales_pos.xml" value="0.29270833333333335" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/OrderSystemList/app/src/main/res/layout/activity_sales_pos.xml" value="0.5" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/OrderSystemList/app/src/main/res/layout/activity_sales_posactivity.xml" value="0.29270833333333335" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/OrderSystemList/app/src/main/res/layout/contain_main.xml" value="0.29270833333333335" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/OrderSystemList/app/src/main/res/layout/fragment_sales_all.xml" value="0.26875" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/OrderSystemList/app/src/main/res/layout/fragment_sales_live.xml" value="0.29270833333333335" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/OrderSystemList/app/src/main/res/layout/item_buy_list.xml" value="0.33" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/OrderSystemList/app/src/main/res/layout/item_live_sale.xml" value="0.290625" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/OrderSystemList/app/src/main/res/layout/item_places.xml" value="0.29270833333333335" />

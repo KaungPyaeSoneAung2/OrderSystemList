@@ -1,4 +1,4 @@
-package com.example.myapplication.ordersystemlist
+package com.example.myapplication.ordersystemlist.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

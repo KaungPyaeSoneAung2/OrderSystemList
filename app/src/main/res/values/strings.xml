@@ -2,4 +2,10 @@
     <string name="app_name">OrderSystemList</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="အချိန်">
+        <item>ယနေ့အတွက်</item>
+        <item>မနေ့က</item>
+        <item>ယခုတပတ်အတွက်</item>
+        <item>ယခုလအတွက်</item>
+    </string-array>
 </resources>
