@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
+import android.widget.ArrayAdapter
 import android.widget.SearchView
 import androidx.core.view.isVisible
 import androidx.core.widget.addTextChangedListener
@@ -28,7 +29,11 @@ class SalesPOSActivity : AppCompatActivity() {
         }
 
 
-   }
+        var spinnerAdapter= ArrayAdapter.createFromResource(this,R.array.Time,R.layout.spinner_selected)
+        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_list_item_1)
+        binding.spinnerTime.adapter = spinnerAdapter
+
+    }
 
 
     fun useless(){

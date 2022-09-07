@@ -83,7 +83,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/clTopMiniBar"
-        android:visibility="gone">
+        android:visibility="visible">
 
         <HorizontalScrollView
             android:layout_width="0dp"
@@ -104,8 +104,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
+
                 <Spinner
                     android:id="@+id/spinnerTime"
+                    android:background="@drawable/spinner_background"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
