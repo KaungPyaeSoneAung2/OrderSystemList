@@ -18,6 +18,25 @@ class SalesPOSActivity : AppCompatActivity() {
         binding= ActivitySalesPosBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        filterFunction()
+        searchFunction()
+
+
+   }
+
+    private fun searchFunction() {
+        binding.ivSearchButton.setOnClickListener {
+            if (binding.etSearchButton.visibility==View.GONE){
+            binding.etSearchButton.visibility=View.VISIBLE
+            }
+            else if (binding.etSearchButton.visibility==View.VISIBLE){
+                binding.etSearchButton.visibility=View.GONE
+            }
+        }
+        binding.etSearchButton.setBackgroundResource(R.drawable.search_border)
+    }
+
+    private fun filterFunction() {
         binding.ivFilterButton.setOnClickListener {
             if (binding.clSpinnerList.visibility==View.GONE){
                 binding.clSpinnerList.visibility=View.VISIBLE
@@ -26,9 +45,7 @@ class SalesPOSActivity : AppCompatActivity() {
                 binding.clSpinnerList.visibility=View.GONE
             }
         }
-
-
-   }
+    }
 
 
     fun useless(){

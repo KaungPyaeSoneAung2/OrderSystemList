@@ -20,13 +20,17 @@ class BackUpActivity : AppCompatActivity() {
         binding=ActivityBackUpBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        TabChangeManage()
+    }
+    fun TabChangeManage(){
         val viewPager2:ViewPager2=binding.viewPager2
         tabLayout = findViewById(R.id.tabLayout)
 
         tabLayout.addTab(tabLayout.newTab().setText("All"))
-        //tabLayout.addTab(tabLayout.newTab().setText("POS"))
+        tabLayout.addTab(tabLayout.newTab().setText("POS"))
         tabLayout.addTab(tabLayout.newTab().setText("Live"))
         //tabLayout.addTab(tabLayout.newTab().setText("Online"))
+
 
         val fragmentManager:FragmentManager=supportFragmentManager
         val fragmentAdapter=MyFragmentAdapter(fragmentManager , lifecycle)

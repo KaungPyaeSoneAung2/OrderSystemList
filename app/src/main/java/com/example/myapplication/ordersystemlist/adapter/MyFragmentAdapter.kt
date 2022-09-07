@@ -7,16 +7,23 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.myapplication.ordersystemlist.activity.SalesAllActivity
 import com.example.myapplication.ordersystemlist.fragments.SalesAllFragment
 import com.example.myapplication.ordersystemlist.fragments.SalesLiveFragment
+import com.example.myapplication.ordersystemlist.fragments.SalesPosFragment
 
 class MyFragmentAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle) :
     FragmentStateAdapter(fragmentManager, lifecycle) {
     override fun createFragment(position: Int): Fragment {
-        return if (position == 1) {
-            SalesAllFragment()
-        } else SalesLiveFragment()
+        return when (position) {
+            1 -> {
+                SalesLiveFragment()
+            }
+            2 -> {
+                SalesAllFragment()
+            }
+            else -> SalesPosFragment()
+        }
     }
 
     override fun getItemCount(): Int {
-        return 2
+        return 3
     }
 }
