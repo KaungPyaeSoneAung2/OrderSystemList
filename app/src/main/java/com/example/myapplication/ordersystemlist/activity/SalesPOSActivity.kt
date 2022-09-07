@@ -29,9 +29,9 @@ class SalesPOSActivity : AppCompatActivity() {
         }
 
 
-        var spinnerAdapter= ArrayAdapter.createFromResource(this,R.array.Time,R.layout.spinner_selected)
-        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_list_item_1)
-        binding.spinnerTime.adapter = spinnerAdapter
+//        var spinnerAdapter= ArrayAdapter.createFromResource(this,R.array.Time,R.layout.spinner_selected)
+//        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_list_item_1)
+//        binding.spinnerTime.adapter = spinnerAdapter
 
     }
 

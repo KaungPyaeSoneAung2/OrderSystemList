@@ -10,4 +10,29 @@
         <item>ယခုလအတွက်</item>
     </string-array>
 
+    <string-array name="PaymentCondition">
+        <item>ငွေပေးချေမှု အခြေအနေ</item>
+        <item>ပေးချေပြီး</item>
+        <item>မပေးရသေး</item>
+        <item>ငွေပေးချေမှု မအောင်မြင်</item>
+    </string-array>
+
+    <string-array name="PaymentMethod">
+        <item>Cash</item>
+        <item>KBZPay</item>
+        <item>AYAPay</item>
+        <item>WavePay</item>
+        <item>KBZ Bank</item>
+        <item>AYA Bank</item>
+        <item>CB Bank</item>
+        <item>Yoma Bank</item>
+    </string-array>
+
+    <string-array name="Place">
+        <item>Aung Lan အောင်လံ</item>
+        <item>Aung Pan အောင်ပန်း</item>
+        <item>Bamaw ဗန်းမော်</item>
+        <item>Chaung Gyi ချောင်းကြီး</item>
+        <item>Doe Ka Lay ဒိုးကလေး</item>
+    </string-array>
 </resources>
