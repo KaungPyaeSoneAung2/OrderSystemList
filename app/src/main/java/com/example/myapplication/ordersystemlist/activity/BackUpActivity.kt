@@ -1,5 +1,6 @@
 package com.example.myapplication.ordersystemlist.activity
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
@@ -26,9 +27,9 @@ class BackUpActivity : AppCompatActivity() {
         val viewPager2:ViewPager2=binding.viewPager2
         tabLayout = findViewById(R.id.tabLayout)
 
-        tabLayout.addTab(tabLayout.newTab().setText("All"))
         tabLayout.addTab(tabLayout.newTab().setText("POS"))
-        tabLayout.addTab(tabLayout.newTab().setText("Live"))
+        tabLayout.addTab(tabLayout.newTab().setText("Live sale"))
+        tabLayout.addTab(tabLayout.newTab().setText("eCommerce"))
         //tabLayout.addTab(tabLayout.newTab().setText("Online"))
 
 
@@ -54,5 +55,9 @@ class BackUpActivity : AppCompatActivity() {
                 tabLayout.selectTab(tabLayout.getTabAt(position))
             }
         })
+
+        binding.ivHamburger.setOnClickListener {
+            Intent(this,DetailSearchActivity::class.java).also { startActivity(it) }
+        }
     }
 }

@@ -18,10 +18,12 @@
             android:textSize="18sp"
             android:text="Layout Fragment change"
             android:gravity="center"
+            android:visibility="visible"
             android:layout_marginHorizontal="20dp"/>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/clTopMiniBar"
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingVertical="10dp"
@@ -37,24 +39,50 @@
                 app:layout_constraintTop_toTopOf="parent"
                 android:layout_marginLeft="15dp"
                 />
+
+            <EditText
+                android:id="@+id/etSearchButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="14dp"
+                android:background="@color/white"
+                android:foregroundGravity="right"
+                android:hint="အော်ဒါ ID သို့မဟုတ် ဝယ်ယူသူနာမည်"
+                android:paddingVertical="10dp"
+                android:paddingLeft="10dp"
+                android:textSize="16sp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/ivFilterButton"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/ivFilterButton"
+                app:layout_constraintTop_toTopOf="@id/ivFilterButton" />
+
             <ImageView
                 android:id="@+id/ivSearchButton"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                app:layout_constraintBottom_toBottomOf="@+id/tvSalesVoucherAmount"
-                app:layout_constraintRight_toRightOf="parent"
-                android:layout_marginRight="15dp"
-                android:src="@drawable/ic_search_24" />
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/ic_search_24"
+                app:layout_constraintBottom_toBottomOf="@id/ivFilterButton"
+                app:layout_constraintRight_toLeftOf="@+id/ivFilterButton"
+                app:layout_constraintTop_toTopOf="@id/ivFilterButton" />
+
+
+
+
+
             <ImageView
                 android:id="@+id/ivFilterButton"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                app:layout_constraintBottom_toBottomOf="@+id/tvSalesVoucherAmount"
-                app:layout_constraintRight_toLeftOf="@id/ivSearchButton"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:layout_marginRight="15dp"
                 android:src="@drawable/ic_filter_alt_24"
-                />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvLiveSale"
             android:layout_width="match_parent"

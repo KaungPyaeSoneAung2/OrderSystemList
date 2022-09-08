@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.OrderSystemList" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/lightBlue</item>
+        <item name="colorPrimary">@color/blue</item>
         <item name="colorPrimaryVariant">@color/blue</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
@@ -12,5 +12,13 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+
+    </style>
+    <style name="cutomChipColor" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="chipBackgroundColor">@color/selected_unselected</item>
+        <item name="android:textColor">@color/chip_text_color_selected_unselected</item>
+    </style>
+    <style name="CustomTabText" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">16sp</item>
     </style>
 </resources>

@@ -5,41 +5,32 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myapplication.ordersystemlist.R
 import com.example.myapplication.ordersystemlist.adapter.VoucherAdapter
 import com.example.myapplication.ordersystemlist.data.VoucherModel
+import com.example.myapplication.ordersystemlist.databinding.FragmentSalesECommerceBinding
 import com.example.myapplication.ordersystemlist.databinding.FragmentSalesPosBinding
 
-class SalesPosFragment : Fragment() {
-    private lateinit var binding:FragmentSalesPosBinding
+
+class SalesECommerceFragment : Fragment() {
+    private lateinit var binding: FragmentSalesECommerceBinding
     var voucherList=ArrayList<VoucherModel>()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding=FragmentSalesPosBinding.inflate(layoutInflater)
+        // Inflate the layout for this fragment
+        binding=FragmentSalesECommerceBinding.inflate(layoutInflater)
         return binding.root
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        filterFunction()
-        searchFunction()
         rvAddVoucher()
         adapterSetUp()
-        autoCompleteTextSetUp()
+        searchFilterFunction()
     }
-
-    private fun autoCompleteTextSetUp() {
-        val time= resources.getStringArray(R.array.Time)
-        val arrayAdapter=
-            this.context?.let { ArrayAdapter<String>(it,android.R.layout.simple_list_item_1,time) }
-        binding.actvTime.setAdapter(arrayAdapter)
-    }
-
-    private fun searchFunction() {
+    private fun searchFilterFunction() {
         binding.ivSearchButton.setOnClickListener {
             if (binding.etSearchButton.visibility==View.GONE){
                 binding.etSearchButton.visibility=View.VISIBLE
@@ -49,8 +40,7 @@ class SalesPosFragment : Fragment() {
             }
         }
         binding.etSearchButton.setBackgroundResource(R.drawable.search_border)
-    }
-    private fun filterFunction() {
+
         binding.ivFilterButton.setOnClickListener {
             if (binding.clSpinnerList.visibility==View.GONE){
                 binding.clSpinnerList.visibility=View.VISIBLE
@@ -60,6 +50,7 @@ class SalesPosFragment : Fragment() {
             }
         }
     }
+
     private fun adapterSetUp() {
         binding.rvPosOrders.layoutManager= LinearLayoutManager(activity)
         binding.rvPosOrders.setHasFixedSize(true)
@@ -88,5 +79,46 @@ class SalesPosFragment : Fragment() {
             "Payment Rejected","WavePay","100",
             "Toe Aung","10000","+1000")
         )
+        voucherList.add(
+            VoucherModel("#12345","Ordered",
+                "Payment Rejected","WavePay","100",
+                "Toe Aung","10000","+1000")
+        )
+        voucherList.add(
+            VoucherModel("#12345","Ordered",
+                "Payment Rejected","WavePay","100",
+                "Toe Aung","10000","+1000")
+        )
+        voucherList.add(
+            VoucherModel("#12345","Ordered",
+                "Payment Rejected","WavePay","100",
+                "Toe Aung","10000","+1000")
+        )
+        voucherList.add(
+            VoucherModel("#12345","Ordered",
+                "Payment Rejected","WavePay","100",
+                "Toe Aung","10000","+1000")
+        )
+        voucherList.add(
+            VoucherModel("#12345","Ordered",
+                "Payment Rejected","WavePay","100",
+                "Toe Aung","10000","+1000")
+        )
+        voucherList.add(
+            VoucherModel("#12345","Ordered",
+                "Payment Rejected","WavePay","100",
+                "Toe Aung","10000","+1000")
+        )
+        voucherList.add(
+            VoucherModel("#12345","Ordered",
+                "Payment Rejected","WavePay","100",
+                "Toe Aung","10000","+1000")
+        )
+        voucherList.add(
+            VoucherModel("#12345","Ordered",
+                "Payment Rejected","WavePay","100",
+                "Toe Aung","10000","+1000")
+        )
     }
+
 }

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.myapplication.ordersystemlist.R
 import com.example.myapplication.ordersystemlist.adapter.LiveSaleAdapter
 import com.example.myapplication.ordersystemlist.data.LiveNotiModel
 import com.example.myapplication.ordersystemlist.data.VoucherModel
@@ -33,6 +34,7 @@ class SalesLiveFragment : Fragment() {
         rvAddVoucher()
         rvAddLive()
         adapterSetUp()
+        searchFunction()
     }
 
     private fun adapterSetUp() {
@@ -75,5 +77,17 @@ class SalesLiveFragment : Fragment() {
         voucherSmall.add(VoucherModel("#62345","Ordered",
             "Unpaid","Cash","270",
             "Toe Kyaw","50000","1000"))
+    }
+
+    private fun searchFunction() {
+        binding.ivSearchButton.setOnClickListener {
+            if (binding.etSearchButton.visibility==View.GONE){
+                binding.etSearchButton.visibility=View.VISIBLE
+            }
+            else if (binding.etSearchButton.visibility==View.VISIBLE){
+                binding.etSearchButton.visibility=View.GONE
+            }
+        }
+        binding.etSearchButton.setBackgroundResource(R.drawable.search_border)
     }
 }

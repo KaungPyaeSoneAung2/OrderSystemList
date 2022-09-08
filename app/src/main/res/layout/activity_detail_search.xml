@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent">
         <ImageView
+            android:id="@+id/ivClose"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:src="@drawable/ic_close_24"
@@ -72,6 +73,10 @@
             android:layout_marginTop="10dp"
             android:paddingVertical="20dp"
             >
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clTimeCatch"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
             <TextView
                 android:id="@+id/tvTime"
                 android:layout_width="wrap_content"
@@ -101,6 +106,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 android:layout_marginRight="15dp"
                 />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
 <!--            Change radio group here to gone-->
 
@@ -108,8 +114,8 @@
                 android:id="@+id/radioGroup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/tvTime"
-                android:visibility="visible"
+                app:layout_constraintTop_toBottomOf="@id/clTimeCatch"
+                android:visibility="gone"
                 >
 
                 <LinearLayout
@@ -175,6 +181,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingVertical="20dp">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clOrderConditionCatch"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
             <TextView
                 android:id="@+id/tvOrderCondition"
                 android:layout_width="wrap_content"
@@ -204,54 +214,49 @@
                 app:layout_constraintTop_toTopOf="parent"
                 android:layout_marginRight="15dp"
                 />
+            </androidx.constraintlayout.widget.ConstraintLayout>
         <com.google.android.material.chip.ChipGroup
             android:id="@+id/cgOrderCondition"
-            app:layout_constraintTop_toBottomOf="@+id/tvOrderCondition"
+            app:layout_constraintTop_toBottomOf="@+id/clOrderConditionCatch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:layout_marginHorizontal="10dp">
+            android:layout_marginHorizontal="10dp"
+            android:visibility="gone">
             <com.google.android.material.chip.Chip
                 android:id="@+id/chipOneOrder"
-                style="@style/Widget.MaterialComponents.Chip.Choice"
+                style="@style/cutomChipColor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:chipBackgroundColor="@color/selected_unselected"
-                android:text="မှာယူပြီး" />
+                android:text="မှာယူပြီး"
+                />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chipTwoOrder"
-                style="@style/Widget.MaterialComponents.Chip.Choice"
-                android:layout_width="wrap_content"
+                style="@style/cutomChipColor"                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:chipBackgroundColor="@color/selected_unselected"
                 android:text="ထုပ်ပိုးပြီး" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chipThreeOrder"
-                style="@style/Widget.MaterialComponents.Chip.Choice"
-                android:layout_width="wrap_content"
+                style="@style/cutomChipColor"                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:chipBackgroundColor="@color/selected_unselected"
                 android:text="ပို့ဆောင်နေသည်" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chipFourOrder"
-                style="@style/Widget.MaterialComponents.Chip.Choice"
-                android:layout_width="wrap_content"
+                style="@style/cutomChipColor"                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:chipBackgroundColor="@color/selected_unselected"
                 android:text="ပို့ဆောင်ပြီး" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chipFiveOrder"
-                style="@style/Widget.MaterialComponents.Chip.Choice"
-                android:layout_width="wrap_content"
+                style="@style/cutomChipColor"                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:chipBackgroundColor="@color/selected_unselected"
                 android:text="ပယ်ဖျက်ပြီး" />
 
         </com.google.android.material.chip.ChipGroup>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <View
@@ -265,11 +270,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingVertical="20dp">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clPaymentConditionCatch"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
         <TextView
             android:id="@+id/tvPaymentCondition"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="အော်ဒါအခြေအနေ"
+            android:text="ငွေပေးချေမှု အခြေအနေ"
             android:textSize="16sp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -294,36 +304,32 @@
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginRight="15dp"
             />
+            </androidx.constraintlayout.widget.ConstraintLayout>
             <com.google.android.material.chip.ChipGroup
                 android:id="@+id/cgPaymentCondition"
-                app:layout_constraintTop_toBottomOf="@+id/tvPaymentCondition"
+                app:layout_constraintTop_toBottomOf="@+id/clPaymentConditionCatch"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginHorizontal="10dp"
+                android:visibility="gone"
                 >
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chipOnePayment"
-                    style="@style/Widget.MaterialComponents.Chip.Choice"
-                    android:layout_width="wrap_content"
+                    style="@style/cutomChipColor"                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:chipBackgroundColor="@color/selected_unselected"
                     android:text="ပေးချေပြီး" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chipTwoPayment"
-                    style="@style/Widget.MaterialComponents.Chip.Choice"
-                    android:layout_width="wrap_content"
+                    style="@style/cutomChipColor"                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:chipBackgroundColor="@color/selected_unselected"
                     android:text="မပေးရသေး" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chipThreePayment"
-                    style="@style/Widget.MaterialComponents.Chip.Choice"
-                    android:layout_width="wrap_content"
+                    style="@style/cutomChipColor"                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:chipBackgroundColor="@color/selected_unselected"
                     android:text="ငွေပေးချေမှုမအောင်မြင်" />
 
             </com.google.android.material.chip.ChipGroup>
@@ -340,11 +346,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingVertical="20dp">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clPaymentPlaceCatch"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
             <TextView
                 android:id="@+id/tvPaymentPlace"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="အော်ဒါအခြေအနေ"
+                android:text="ငွေပေးချေခဲ့သည့် နေရာ"
                 android:textSize="16sp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -369,71 +379,57 @@
                 app:layout_constraintTop_toTopOf="parent"
                 android:layout_marginRight="15dp"
                 />
+            </androidx.constraintlayout.widget.ConstraintLayout>
             <com.google.android.material.chip.ChipGroup
                 android:id="@+id/cgPaymentPlace"
-                app:layout_constraintTop_toBottomOf="@+id/tvPaymentPlace"
+                app:layout_constraintTop_toBottomOf="@+id/clPaymentPlaceCatch"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginHorizontal="10dp"
+                android:visibility="gone"
                 >
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chipOnePayPlace"
-                    style="@style/Widget.MaterialComponents.Chip.Choice"
-                    android:layout_width="wrap_content"
+                    style="@style/cutomChipColor"                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:chipBackgroundColor="@color/selected_unselected"
                     android:text="Cash" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chipTwoPayPlace"
-                    style="@style/Widget.MaterialComponents.Chip.Choice"
-                    android:layout_width="wrap_content"
+                    style="@style/cutomChipColor"                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:chipBackgroundColor="@color/selected_unselected"
                     android:text="KBZPay" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chipThreePayPlace"
-                    style="@style/Widget.MaterialComponents.Chip.Choice"
-                    android:layout_width="wrap_content"
+                    style="@style/cutomChipColor"                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:chipBackgroundColor="@color/selected_unselected"
                     android:text="AYAPay" />
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chipFourPayPlace"
-                    style="@style/Widget.MaterialComponents.Chip.Choice"
-                    android:layout_width="wrap_content"
+                    style="@style/cutomChipColor"                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:chipBackgroundColor="@color/selected_unselected"
                     android:text="WavePay" />
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chipFivePayPlace"
-                    style="@style/Widget.MaterialComponents.Chip.Choice"
-                    android:layout_width="wrap_content"
+                    style="@style/cutomChipColor"                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:chipBackgroundColor="@color/selected_unselected"
                     android:text="KBZBank" />
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chipSixPayPlace"
-                    style="@style/Widget.MaterialComponents.Chip.Choice"
-                    android:layout_width="wrap_content"
+                    style="@style/cutomChipColor"                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:chipBackgroundColor="@color/selected_unselected"
                     android:text="AYABank" />
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chipSevenPayPlace"
-                    style="@style/Widget.MaterialComponents.Chip.Choice"
-                    android:layout_width="wrap_content"
+                    style="@style/cutomChipColor"                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:chipBackgroundColor="@color/selected_unselected"
                     android:text="CB Bank" />
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chipEightPayPlace"
-                    style="@style/Widget.MaterialComponents.Chip.Choice"
-                    android:layout_width="wrap_content"
+                    style="@style/cutomChipColor"                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:chipBackgroundColor="@color/selected_unselected"
                     android:text="Yoma Bank" />
             </com.google.android.material.chip.ChipGroup>
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -449,11 +445,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingVertical="20dp">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clOrderPlacceCatch"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
             <TextView
                 android:id="@+id/tvOrderPlace"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="အော်ဒါအခြေအနေ"
+                android:text="အော်ဒါမှာယူသောနေရာ"
                 android:textSize="16sp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -478,12 +478,12 @@
                 app:layout_constraintTop_toTopOf="parent"
                 android:layout_marginRight="15dp"
                 />
-
+            </androidx.constraintlayout.widget.ConstraintLayout>
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/ccOrderPlaceSearch"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@+id/tvOrderPlace">
+                app:layout_constraintTop_toBottomOf="@+id/clOrderPlacceCatch">
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/tilOrderPlaceSearch"
@@ -500,6 +500,7 @@
                     app:boxStrokeColor="@color/lightGrey"
                     app:endIconMode="custom"
                     app:endIconDrawable="@drawable/ic_search_24"
+                    android:visibility="gone"
                     >
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/et_OrderPlaceSearch"
@@ -513,17 +514,19 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvSearchResults"
                     app:layout_constraintTop_toBottomOf="@+id/tilOrderPlaceSearch"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     tools:listitem="@layout/item_places"
-                    tools:itemCount="5"/>
+                    android:visibility="gone"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
     </ScrollView>
+
     <LinearLayout
         android:id="@+id/llSearchSubmit"
         android:layout_width="match_parent"
